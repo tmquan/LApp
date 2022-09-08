@@ -18,27 +18,23 @@ def _streamlit_demo(lightning_app_state):
             </style>
             """
     st.markdown(_style, unsafe_allow_html=True)
-    st.title("Natural Language Processing and Computer Vision Tasks")
     # TODO
     with st.sidebar:
         page = option_menu(menu_title="Menu",
-                            menu_icon="robot",
+                            menu_icon="house-door",
                             options=[
-                                "Tasks",
-                                "Semantic-based Segmentation",
-                                "Proposal-based Segmentation",
+                                "General Information",
+                                "Semantic Segmentation",
+                                "Proposal Segmentation",
                             ],
                             icons=[
-                                "house-door",
-                                "emoji-heart-eyes",
-                                "building"
+                                None, 
+                                None, 
+                                None
                             ],
                             default_index=0
                         )
-    if page == "Tasks":
-        st.header("Tasks")
         
-
 class LitStreamlitDemo(L.LightningFlow):
     def configure_layout(self):
         return StreamlitFrontend(render_fn=_streamlit_demo)
