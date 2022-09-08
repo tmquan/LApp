@@ -1,2 +1,11 @@
 .storage/frontend/error.log
 .storage/frontend/output.log
+gradio_queue.db
+demo/__pycache__/rep_image.cpython-38.pyc
+demo/__pycache__/__init__.cpython-38.pyc
+__pycache__/app_multitab_xray.cpython-38.pyc
+.gitignore
+__pycache__/app_multitab_demo.cpython-38.pyc
+.storage/frontend/error.log
+.storage/frontend/output.log
+__pycache__/app_multitab_menu.cpython-38.pyc

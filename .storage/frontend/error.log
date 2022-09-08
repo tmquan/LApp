@@ -1,38 +1,9 @@
 Exception in thread Thread-3:
 Traceback (most recent call last):
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+  File "/Users/admin/opt/anaconda3/lib/python3.8/threading.py", line 932, in _bootstrap_inner
     self.run()
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/threading.py", line 870, in run
+  File "/Users/admin/opt/anaconda3/lib/python3.8/threading.py", line 870, in run
     self._target(*self._args, **self._kwargs)
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/site-packages/lightning_app/utilities/app_helpers.py", line 191, in target_fn
-    from streamlit.server.server import Server
-ModuleNotFoundError: No module named 'streamlit.server'
-2022-09-07 19:38:25.178 Created a temporary directory at /var/folders/9t/fm_8rbsj76xdp57m4x_zbfw80000gn/T/tmpg13u5c13
-2022-09-07 19:38:25.178 Writing /var/folders/9t/fm_8rbsj76xdp57m4x_zbfw80000gn/T/tmpg13u5c13/_remote_module_non_scriptable.py
-Exception in thread Thread-4:
-Traceback (most recent call last):
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/threading.py", line 932, in _bootstrap_inner
-    self.run()
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/threading.py", line 870, in run
-    self._target(*self._args, **self._kwargs)
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/site-packages/lightning_app/utilities/app_helpers.py", line 191, in target_fn
-    from streamlit.server.server import Server
-ModuleNotFoundError: No module named 'streamlit.server'
-Exception in thread Thread-5:
-Traceback (most recent call last):
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/threading.py", line 932, in _bootstrap_inner
-    self.run()
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/threading.py", line 870, in run
-    self._target(*self._args, **self._kwargs)
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/site-packages/lightning_app/utilities/app_helpers.py", line 191, in target_fn
-    from streamlit.server.server import Server
-ModuleNotFoundError: No module named 'streamlit.server'
-Exception in thread Thread-6:
-Traceback (most recent call last):
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/threading.py", line 932, in _bootstrap_inner
-    self.run()
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/threading.py", line 870, in run
-    self._target(*self._args, **self._kwargs)
-  File "/Users/tmquan/opt/anaconda3/lib/python3.8/site-packages/lightning_app/utilities/app_helpers.py", line 191, in target_fn
+  File "/Users/admin/opt/anaconda3/lib/python3.8/site-packages/lightning_app/utilities/app_helpers.py", line 191, in target_fn
     from streamlit.server.server import Server
 ModuleNotFoundError: No module named 'streamlit.server'

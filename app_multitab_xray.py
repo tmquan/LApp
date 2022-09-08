@@ -22,55 +22,14 @@ class LitStreamlitHome(L.LightningFlow):
     def configure_layout(self):
         return StreamlitFrontend(render_fn=_streamlit_home)
 
-# def _streamlit_demo(state: AppState):
-#     import streamlit as st
-#     _style = """
-#             <style>
-#             #MainMenu {visibility: hidden;}
-#             footer {visibility: hidden;}
-#             </style>
-#             """
-#     st.markdown(_style, unsafe_allow_html=True)
-#     # TODO
-#     with st.sidebar:
-#         page = option_menu(menu_title="Menu",
-#                             menu_icon="house-door",
-#                             options=[
-#                                 "General Information",
-#                                 "Replicate Form",
-#                                 "Replicate Image",
-#                             ],
-#                             icons=[
-#                                 None, 
-#                                 None, 
-#                                 None
-#                             ],
-#                             default_index=0
-#                         )
-    
-
-        
-# class LitStreamlitDemo(L.LightningFlow):
-#     def __init__(self):
-#         super().__init__()
-#         self.rep_image = ImageServeGradio(L.CloudCompute("cpu"))
-
-#     def run(self):
-#         self.rep_image.run()
-    
-#     def configure_layout(self, page):
-#         if page=="Replicate Image":
-#             return StreamlitFrontend(render_fn=_streamlit_demo)
-
-class XRay(ServeGradio):
-
+class Image2ImageServeGradio(ServeGradio):
     inputs = gr.inputs.Image(type="pil", label="Select an input image")  # required
     outputs = gr.outputs.Image(type="pil")  # required
     # examples = ["./images/comic_lr.png"]  # required
     examples = [os.path.join(str("./images"), f) for f in os.listdir("./images")]
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, cloud_compute, *args, **kwargs):
+        super().__init__(*args, cloud_compute=cloud_compute, **kwargs)
         self.ready = False  # required
 
     def predict(self, img):
@@ -129,7 +88,8 @@ class LitRootFlow(L.LightningFlow):
         super().__init__()
         self.home = LitStreamlitHome()
         # self.demo = LitStreamlitDemo()
-        self.demo = ImageServeGradio(L.CloudCompute("cpu"))
+        # self.demo = ImageServeGradio(L.CloudCompute("cpu"))
+        self.xray = Image2ImageServeGradio(L.CloudCompute("cpu"))
 
     def configure_layout(self):
         tabs = []
@@ -139,6 +99,6 @@ class LitRootFlow(L.LightningFlow):
 
     def run(self):
         self.home.run()
-        self.demo.run()
+        self.xray.run()
     
 app = L.LightningApp(LitRootFlow())
