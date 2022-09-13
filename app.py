@@ -3,10 +3,10 @@ import lightning as L
 import gradio as gr
 import pandas as pd
 
-from lightning.app.frontend import StreamlitFrontend
 from lightning_app.utilities.state import AppState
-from streamlit_option_menu import option_menu
 from lightning.app.components.serve import ServeGradio
+from lightning.app.frontend import StreamlitFrontend
+# from streamlit_option_menu import option_menu
 
 def _streamlit_home(state: AppState):
     import streamlit as st
@@ -65,18 +65,6 @@ class QuestionAnsweringServeGradio(ServeGradio):
     def __init__(self, cloud_compute, *args, **kwargs):
         super().__init__(*args, cloud_compute=cloud_compute, **kwargs)
         self.ready = False  # required
-        # self.question_json = "questions.json"
-        # self.parse_questions(json_file=self.question_json)
-
-    # def parse_questions(self, json_file=None):
-    #     assert json_file is not None
-    #     import pandas as pd
-    #     self.questions = []
-    #     questions_df = pd.read_json(json_file)
-    #     # print(questions)
-    #     for item in questions_df["qas"]:
-    #         print(item["question"])
-    #         self.questions.append(item["question"])
 
     def build_model(self):
         pass
