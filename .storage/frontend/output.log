@@ -1,5 +1,11 @@
 
   You can now view your Streamlit app in your browser.
 
-  URL: http://localhost:51466/root.home
+  URL: http://localhost:56455/root.home
 
+  For better performance, install the Watchdog module:
+
+  $ xcode-select --install
+  $ pip install watchdog
+            
+  Stopping...
