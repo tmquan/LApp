@@ -24,27 +24,6 @@ class LitStreamlitHome(L.LightningFlow):
         return StreamlitFrontend(render_fn=_streamlit_home)
 
 class QuestionAnsweringServeGradio(ServeGradio):
-    # inputs = [
-    #     gr.inputs.Textbox(lines=10, label="Context", placeholder="Type a sentence or paragraph here."), 
-    #     gr.inputs.Textbox(lines=2, label="Question", placeholder="Ask a question based on the context."),
-    # ]
-    # outputs = [
-    #     gr.outputs.Textbox(label="Answer"),
-    #     gr.outputs.Label(label="Score"),
-    # ]
-    # enable_queue = True
-    # examples = [
-    #     ["Harry James Potter (DOB: 31 July, 1980) was a half-blood wizard, and one of the most famous wizards of modern times. He was the only child and son of James and Lily Potter, both members of the original Order of the Phoenix. Harry's birth was overshadowed by a prophecy, naming either himself or Neville Longbottom as the one with the power to vanquish Lord Voldemort. After half of the prophecy was reported to Voldemort, courtesy of Severus Snape, Harry was chosen as the target due to his many similarities with the Dark Lord. This caused the Potter family to go into hiding. Voldemort made his first vain attempt to circumvent the prophecy when Harry was a year and three months old. During this attempt he murdered Harry's parents as they tried to protect him, but this unsuccessful attempt to kill Harry led to Voldemort's first downfall. This downfall marked the end of the First Wizarding War, and to Harry henceforth being known as the \"Boy Who Lived\".", 
-    #     "What is the first character's name?"],
-    #     ["Hermione Jean Granger (DOB 19 September, 1979) was an English Muggle-born witch born to Mr and Mrs Granger. At the age of eleven, she learned about her magical nature and was accepted into Hogwarts School of Witchcraft and Wizardry. Hermione began attending Hogwarts in 1991 and was Sorted into Gryffindor House. She possessed a brilliant academic mind and proved to be a gifted student in almost every subject that she studied, to the point where she was nearly made a Ravenclaw by the Sorting Hat.", 
-    #     "What is the first character's gender?"],
-    # ]
-    # with gr.Column():
-    #         text_input = gr.Textbox()
-    #         text_output = gr.Textbox()
-    #     text_button = gr.Button("Flip")
-    
-    
     # Example
     questions = []
     json_file = "questions.json"
